@@ -1,0 +1,60 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Modelo de Usuário
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String   // Lembre-se: Senhas devem ser hash (bcrypt)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tasks      Task[]     // Relacionamento 1-N (Um usuário tem várias tarefas)
+  categories Category[] // Relacionamento 1-N (Um usuário tem várias categorias)
+
+  @@map("users")
+}
+
+// Modelo de Tarefa
+model Task {
+  id          String   @id @default(uuid())
+  title       String
+  description String?  @db.Text // Descrição pode ser longa e opcional
+  isCompleted Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Chave estrangeira para User
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Chave estrangeira para Category (Opcional - Tarefa pode não ter categoria)
+  categoryId String?
+  category   Category? @relation(fields: [categoryId], references: [id])
+
+  @@map("tasks")
+}
+
+// Modelo de Categoria
+model Category {
+  id    String @id @default(uuid())
+  name  String
+  color String? // Hex code para UI (ex: #FF0000)
+
+  // Pertence a um usuário específico
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  tasks Task[]
+
+  @@map("categories")
+}

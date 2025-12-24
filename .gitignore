@@ -1,0 +1,21 @@
+# Dependências
+node_modules
+npm-debug.log
+
+# Variáveis de Ambiente (CRÍTICO: Não commitar senhas)
+.env
+
+# Build de produção
+dist
+build
+
+# Arquivos de sistema e IDEs
+.DS_Store
+.vscode
+.idea
+*.swp
+
+# Logs do Docker (opcional)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

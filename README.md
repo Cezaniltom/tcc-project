@@ -82,4 +82,4 @@ npm run dev
 
 O servidor iniciará em http://localhost:3000
 
-Autor: Cezanilton
+Autor: Francisco Cezaniltom Soares Silva

@@ -31,7 +31,7 @@ O design do sistema foi concebido seguindo os princípios de *Glassmorphism* e *
 
 | Tela de Login | Dashboard (Desktop) |
 |:---:|:---:|
-| <img src="./" width="400" /> | <img src="./" width="400" />
+| <img src="./assets/login.png" width="400" /> | <img src="./assets/dashboard.png" width="400" />
 
 ## 🔧 Como Rodar o Projeto
 

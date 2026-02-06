@@ -29,9 +29,13 @@ O banco de dados garante integridade referencial com as seguintes entidades prin
 
 O design do sistema foi concebido seguindo os princípios de *Glassmorphism* e *Dark Mode*.
 
-| Tela de Login | Dashboard (Desktop) |
+| Tela de Login | Cadastro |
 |:---:|:---:|
-| <img src="./assets/login.png" width="400" /> | <img src="./assets/dashboard.png" width="400" />
+| <img src="./assets/login.png" width="400" /> | <img src="./assets/cadastro.png" width="400" />
+
+| Dashboard | Tasks |
+|:---:|:---:|
+| <img src="./assets/login.png" width="400" /> | <img src="./assets/tasks.png" width="400" />
 
 ## 🔧 Como Rodar o Projeto
 

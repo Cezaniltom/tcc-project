@@ -29,6 +29,8 @@ O banco de dados garante integridade referencial com as seguintes entidades prin
 
 O design do sistema foi concebido seguindo os princípios de *Glassmorphism* e *Dark Mode*.
 
+> 🖌️ **[Clique aqui para acessar o Protótipo Completo no Figma](https://www.figma.com/design/UNfIHuSFzIeHDqIID4cC41/TCC-PROJECT?node-id=0-1&t=6XElLYYiXW6PxCIG-1)**
+
 | Tela de Login | Cadastro |
 |:---:|:---:|
 | <img src="./assets/login.png" width="400" /> | <img src="./assets/cadastro.png" width="400" />

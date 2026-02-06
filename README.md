@@ -1,32 +1,79 @@
-# To-Do List API (TCC Pós-Graduação Full Stack)
+# TaskMaster (TCC Pós-Graduação Full Stack)
 
-Backend da aplicação de gerenciamento de tarefas.
+## 📋 Sobre o Projeto
 
-## 🚀 Tecnologias Utilizadas
+O **TaskMaster** é uma aplicação projetada para demonstrar a implementação de uma arquitetura moderna e desacoplada. O objetivo principal deste repositório é validar a arquitetura de **microsserviços containerizados**, a modelagem de dados relacional e a segurança via autenticação.
 
-* **Node.js**
-* **Express**
-* **MySQL 8.0**
-* **Prisma ORM**
-* **Docker & Docker Compose**
-* **TypeScript**
+Embora o foco desta implementação seja a **API (Backend)** e a **Infraestrutura (Docker)**, o projeto conta com prototipagem de alta fidelidade para a interface de usuário.
 
-## 🗂 Arquitetura e Estrutura de Dados
+## 🛠 Tecnologias & Arquitetura
 
-O banco de dados foi modelado utilizando Prisma, contendo as seguintes entidades:
-* **User:** Gerenciamento de acesso e autenticação.
-* **Task:** Tarefas com título, descrição e status.
-* **Category:** Organização de tarefas (Relacionamento N:1).
+O projeto foi construído sobre uma pilha tecnológica robusta:
 
-## 🔧 Como rodar o projeto localmente
+- **Runtime:** Node.js (v18+)
+- **Framework:** Express (API RESTful)
+- **Banco de Dados:** MySQL 8.0 (Containerizado)
+- **ORM:** Prisma (Schema & Migrations)
+- **Infraestrutura:** Docker & Docker Compose
+- **Linguagem:** TypeScript (Tipagem Estática)
 
-### Pré-requisitos
-* Docker e Docker Compose V2 instalados.
-* Node.js (v18 ou superior).
-* NPM.
+## 🗂 Modelagem de Dados (Prisma)
 
-### 1. Clonar e Instalar Dependências
+O banco de dados garante integridade referencial com as seguintes entidades principais:
+- **User:** Gerenciamento de credenciais e perfil.
+- **Account:** Suporte para autenticação OAuth (Google/GitHub).
+- **Task:** Tarefas com prioridade, vencimento e status.
+- **Category:** Classificação organizacional.
+
+## 🎨 Protótipos de Interface (UI/UX)
+
+O design do sistema foi concebido seguindo os princípios de *Glassmorphism* e *Dark Mode*.
+
+| Tela de Login | Dashboard (Desktop) |
+|:---:|:---:|
+| <img src="./" width="400" /> | <img src="./" width="400" />
+
+## 🔧 Como Rodar o Projeto
+
+Siga os passos abaixo para subir a infraestrutura completa localmente:
+
+### 1. Pré-requisitos
+- Docker & Docker Compose instalados.
+- Node.js (v18 ou superior).
+
+### 2. Instalação
+
 ```bash
-git clone https://github.com/Cezaniltom/tcc-project.git
-cd todo-list-api
+# Clone o repositório
+git clone [https://github.com/Cezaniltom/tcc-project.git](https://github.com/Cezaniltom/tcc-project.git)
+
+# Entre na pasta
+cd tcc-project
+
+# Instale as dependências do Node
 npm install
+```
+
+### 3. Subindo a Infraestrutura (Docker)
+Sobe o banco MySQL em segundo plano
+
+````bash
+docker-compose up -d
+````
+
+### 4. Configurando o Banco de Dados
+Gera o cliente do Prisma e cria as tabelas no MySQL
+
+````bash
+npx prisma migrate dev --name init
+````
+
+### 5. Executando a API
+
+````bash
+npm run dev
+````
+
+O servidor iniciará em http://localhost:3000
+
+Autor: Cezanilton
